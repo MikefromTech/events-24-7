@@ -1,0 +1,396 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Heritage Motors Zimbabwe - Premium Automotive Design System */
+/* Inspired by Toyota.com - Clean, Cinematic, Corporate */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap');
+
+@layer base {
+  :root {
+    /* Core Brand Colors - Heritage Motors */
+    --background: 0 0% 100%;
+    --foreground: 220 15% 10%;
+
+    /* Card surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 10%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 10%;
+
+    /* Primary - Heritage Red */
+    --primary: 0 75% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Heritage Orange */
+    --secondary: 25 95% 53%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted surfaces */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8% 46%;
+
+    /* Accent - Charcoal */
+    --accent: 220 15% 15%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 0 75% 45%;
+
+    --radius: 0.5rem;
+
+    /* Premium shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 15% 10% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(220 15% 10% / 0.1), 0 2px 4px -2px hsl(220 15% 10% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(220 15% 10% / 0.1), 0 4px 6px -4px hsl(220 15% 10% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(220 15% 10% / 0.1), 0 8px 10px -6px hsl(220 15% 10% / 0.1);
+    --shadow-hero: 0 25px 50px -12px hsl(220 15% 10% / 0.25);
+
+    /* Sidebar (keeping defaults) */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 0 75% 45%;
+
+    /* WhatsApp Green */
+    --whatsapp: 142 70% 45%;
+    --whatsapp-foreground: 0 0% 100%;
+
+    /* Gold accent for premium feel */
+    --gold: 43 74% 49%;
+    --gold-foreground: 220 15% 10%;
+  }
+
+  .dark {
+    --background: 220 15% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 15% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 15% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 75% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 25 95% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 8% 65%;
+
+    --accent: 220 15% 20%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 0 75% 50%;
+
+    --sidebar-background: 220 15% 8%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 0 75% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 0 75% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  /* Display headings with Bebas Neue */
+  .heading-display {
+    font-family: 'Bebas Neue', 'Inter', sans-serif;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer components {
+  /* Hero Section Styles */
+  .hero-overlay {
+    background: linear-gradient(
+      to right,
+      hsl(220 15% 10% / 0.85) 0%,
+      hsl(220 15% 10% / 0.6) 40%,
+      hsl(220 15% 10% / 0.2) 70%,
+      transparent 100%
+    );
+  }
+
+  .hero-overlay-mobile {
+    background: linear-gradient(
+      to top,
+      hsl(220 15% 10% / 0.95) 0%,
+      hsl(220 15% 10% / 0.7) 40%,
+      hsl(220 15% 10% / 0.3) 70%,
+      transparent 100%
+    );
+  }
+
+  /* Premium Card Styles */
+  .card-premium {
+    @apply bg-card rounded-lg overflow-hidden transition-all duration-500;
+    box-shadow: var(--shadow-md);
+  }
+
+  .card-premium:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-4px);
+  }
+
+  /* Button Variants */
+  .btn-hero {
+    @apply inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-sm transition-all duration-300;
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .btn-hero:hover {
+    @apply bg-primary/90;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .btn-hero-outline {
+    @apply inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-sm transition-all duration-300;
+    @apply bg-transparent border-2 border-white text-white;
+  }
+
+  .btn-hero-outline:hover {
+    @apply bg-white text-accent;
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold rounded-full transition-all duration-300;
+    background: hsl(var(--whatsapp));
+    color: hsl(var(--whatsapp-foreground));
+  }
+
+  .btn-whatsapp:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px -10px hsl(var(--whatsapp) / 0.5);
+  }
+
+  /* Section Titles */
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl text-muted-foreground max-w-2xl;
+  }
+
+  /* Navigation */
+  .nav-link {
+    @apply relative text-sm font-medium text-foreground/80 transition-colors duration-200;
+  }
+
+  .nav-link:hover {
+    @apply text-foreground;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute left-0 -bottom-1 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  /* Brand Card */
+  .brand-card {
+    @apply flex items-center justify-center p-6 md:p-8 bg-muted/50 rounded-lg transition-all duration-300;
+  }
+
+  .brand-card:hover {
+    @apply bg-muted;
+    transform: scale(1.02);
+  }
+
+  /* Car Card */
+  .car-card {
+    @apply relative overflow-hidden rounded-lg bg-card;
+    box-shadow: var(--shadow-md);
+  }
+
+  .car-card-image {
+    @apply w-full aspect-[4/3] object-cover transition-transform duration-700;
+  }
+
+  .car-card:hover .car-card-image {
+    transform: scale(1.05);
+  }
+
+  .car-card-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-accent/90 via-accent/20 to-transparent;
+    @apply opacity-0 transition-opacity duration-500;
+  }
+
+  .car-card:hover .car-card-overlay {
+    @apply opacity-100;
+  }
+
+  .car-card-content {
+    @apply absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white;
+    @apply translate-y-4 opacity-0 transition-all duration-500;
+  }
+
+  .car-card:hover .car-card-content {
+    @apply translate-y-0 opacity-100;
+  }
+
+  /* Floating WhatsApp */
+  .whatsapp-float {
+    @apply fixed bottom-6 right-6 z-50;
+    animation: pulse-whatsapp 2s infinite;
+  }
+
+  @keyframes pulse-whatsapp {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--whatsapp) / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 15px hsl(var(--whatsapp) / 0);
+    }
+  }
+
+  /* Marquee Animation */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  /* Trust Badge */
+  .trust-badge {
+    @apply flex flex-col items-center text-center p-6 md:p-8;
+  }
+
+  .trust-badge-icon {
+    @apply w-16 h-16 mb-4 text-primary;
+  }
+
+  /* Smooth animations */
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Stagger children animations */
+  .stagger-children > * {
+    opacity: 0;
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+  .stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+  .stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+  .stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+  .stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+  .stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+}
+
+@layer utilities {
+  /* Container max widths */
+  .container-wide {
+    @apply max-w-[1920px] mx-auto;
+  }
+
+  /* Aspect ratios */
+  .aspect-hero {
+    aspect-ratio: 16/7;
+  }
+
+  .aspect-car {
+    aspect-ratio: 4/3;
+  }
+
+  /* Text shadows for hero */
+  .text-shadow {
+    text-shadow: 0 2px 10px hsl(220 15% 10% / 0.3);
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+  }
+
+  /* Hide scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
